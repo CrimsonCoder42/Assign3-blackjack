@@ -8,6 +8,10 @@ body {
     text-align: center;
 }
 
+h2{
+    margin-right:300px;
+    margin-bottom:0px;
+}
 
 .mainDiv {
     grid-template-columns: repeat(4, 1fr);
@@ -55,8 +59,11 @@ body {
 .line-item{
     height: calc(var(--gridHeight) * .50);
     width: calc(var(--gridWidth) * .45);
-    border: 1px solid black;
 
+}
+
+#items{
+    border: 1px solid black;
 }
 
 #hotdogs{
