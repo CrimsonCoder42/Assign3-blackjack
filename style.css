@@ -1,0 +1,77 @@
+:root {
+    --gridHeight: 600px;
+    --gridWidth: 600px; 
+}
+
+
+body {
+    text-align: center;
+}
+
+
+.mainDiv {
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    width: var(--gridHeight);
+    height: var(--gridWidth);
+    justify-content: center; 
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+}
+
+.item{
+    border: 2px solid black;
+    height: calc(var(--gridHeight) * .20);
+    width : calc(var(--gridWidth)* .20);
+    box-shadow: 10px 5px 5px lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.line-item{
+    height: calc(var(--gridHeight) * .50);
+    border: 1px solid black;
+
+}
+
+#hotdogs{
+    background-color: #ff0000;
+}
+
+#hotdogs:hover{
+    background-color: #ff3432;
+}
+
+#fries{
+    background-color: #0000ff;
+}
+
+#fries:hover{
+    background-color: #6262ff;
+}
+
+#soda{
+    background-color: #7300ff;
+}
+
+#soda:hover{
+    background-color: #7373ff;
+}
+
+#sauerkraut{
+    background-color: #FFFF00
+}
+
+#sauerkraut:hover{
+    background-color: yellow
+}
+
