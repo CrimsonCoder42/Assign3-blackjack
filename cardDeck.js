@@ -18,38 +18,56 @@ let cardSuits= ["♥", "♠", "♣", "♦"]
 
 //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes make a class so deck be be made and exported to app.js. Use default export https://www.digitalocean.com/community/tutorials/js-modules-es6
 
-export default class fullDeck{
-    constructor(deck = makeDeck()) {
+ class FullDeck{
+    constructor(deck = worthsSuits()) {
         this.deck = deck
-        console.log(this.deck)
+        
     }
 } 
-
 class PlayingCard {
     constructor(suit, worth) {
       this.suit = suit;
       this.worth = worth;
+      //this.color = color;
     }
 
-    setColor() {
-        if (this.suit === "♠" || this.suit === "♣"){
-            return "black"
-        } else {
-            return "red"
-        }
-    }
   }
 
+worthsSuits()
 
-
-// Steal professors calculator trick to combine suits and worths. 
-
-
-function makeDeck() {
-    for (let i = 0; i < cardSuits.length; i++) {
-        for (let j = 0; j < cardWorth.length; j++){
-            console.log(cardWorth[j] + cardSuits[i])
-            new PlayingCard(cardSuits[i], cardWorth[j])
-        }
-    }
+function worthsSuits() {
+    return cardSuits.map(suit => {
+       return cardWorth.map(worth => {
+       return new PlayingCard(worth, suit);
+        } )
+    } )
 }
+
+let deck = new FullDeck();
+let hearts = deck.deck[0];
+let spades = deck.deck[1];
+let clubs = deck.deck[2];
+let diamonds= deck.deck[3]
+ export let shuffledDeck = []
+
+function shuffle() {
+    while (shuffledDeck.length < )
+} 
+
+function heartCards() {
+
+}
+function spadeCards() {
+    
+}
+function clubCards() {
+    
+}
+function diamondCards() {
+    
+}
+
+console.log(hearts)
+console.log(spades)
+console.log(clubs)
+console.log(diamonds)
