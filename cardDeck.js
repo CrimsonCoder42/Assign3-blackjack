@@ -52,6 +52,8 @@ function worthSuits() {
     } )
 }
 
+//Creates decks separated by suits. exports the shuffled cards to app.js.
+
 let deck = new FullDeck();
 let hearts = deck.deck[0];
 let spades = deck.deck[1];
@@ -59,27 +61,30 @@ let clubs = deck.deck[2];
 let diamonds= deck.deck[3]
 let cardTotal = hearts.length + spades.length + clubs.length + diamonds.length; 
  export let shuffledDeck = []
- console.log(cardTotal)
+ 
+ // uses math.Random to randomize card selection to shuffleDeck. 
  
  shuffle()
  function shuffle() {
-     while(shuffledDeck.length < 50){
+     while(shuffledDeck.length < 53){
         let randomNumber = Math.floor(Math.random() * 4) + 1;
         if (randomNumber === 4){
             heartCards()
-            console.log(randomNumber)
+            console.log(`Hearts: ${randomNumber}`)
         }else if(randomNumber === 3){
             spadeCards()
-            console.log(randomNumber)
+            console.log(`Spade: ${randomNumber}`)
         } else if(randomNumber === 2) {
             clubCards()
-            console.log(randomNumber)
+            console.log(`Clubs: ${randomNumber}`)
         } else if(randomNumber === 1){
             diamondCards()
-            console.log(randomNumber)
+            console.log(`Diamonds: ${randomNumber}`)
         }
      }
  } 
+
+// When function called pushes random card by suit into shuffledDeck. Will not allow a card to populate shuffled deck that already exists. 
 
 function heartCards() {
     let randomHeart = hearts[Math.floor(Math.random() * 14)];
@@ -108,9 +113,10 @@ function diamondCards() {
     }
 }
 
-console.log(`this is the shuffled Deck: ${shuffledDeck.length}`)
-console.log(shuffledDeck)
-console.log(hearts)
-console.log(spades)
-console.log(clubs)
-console.log(diamonds)
+// prevents any undefined elements to exist in deck. 
+shuffledDeck = shuffledDeck.filter(function( element){
+    return element !== undefined;
+})
+
+
+
