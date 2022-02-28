@@ -9,6 +9,51 @@ img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    
+
+}
+
+.comp-hand {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 25px;
+    width: 40%;
+    height: 20%;
+    outline: solid 2px white;
+}
+
+.player-hand {
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 25px;
+    width: 40%;
+    height: 20%;
+    outline: solid 2px white;;
+}
+
+.info{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 25px;
+    width: 40%;
+    height: 20%;
+    outline: solid 2px white;
 }
 
