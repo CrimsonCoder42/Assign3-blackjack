@@ -12,6 +12,34 @@ img {
 
 }
 
+#hit {
+    position: absolute;
+    left: 80%;
+    top: 20%;
+    background-color: rgba(228, 15, 15, 0.829);
+    border: none;
+    color: white;
+    padding: 1% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+#stay {
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    background-color: rgb(30, 26, 224);
+    border: none;
+    color: white;
+    padding: 1% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
 .comp-hand {
     position: absolute;
     left: 50%;
@@ -22,7 +50,7 @@ img {
     border-radius: 5px;
     font-size: 24px;
     margin: 25px;
-    width: 40%;
+    width: 80%;
     height: 20%;
     outline: solid 2px white;
 }
@@ -37,12 +65,13 @@ img {
     border-radius: 5px;
     font-size: 24px;
     margin: 25px;
-    width: 40%;
+    width: 80%;
     height: 20%;
-    outline: solid 2px white;;
+    outline: solid 2px white;
+    ;
 }
 
-.info{
+.info {
     position: absolute;
     left: 50%;
     top: 50%;
@@ -52,8 +81,41 @@ img {
     border-radius: 5px;
     font-size: 24px;
     margin: 25px;
-    width: 40%;
+    width: 80%;
     height: 20%;
     outline: solid 2px white;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 25px;
+    width: 15%;
+    height: 80%;
+    outline: solid 2px white;
+}
+
+#computer-hide{
+    left: 25%;
+    top: -10%;
+}
+
+#computer-show{
+    left: 30%;
+    top: -10%;
+}
+
+#player-card1{
+    left: 25%;
+    top: -10%;
+}
+
+#player-card2{
+    left: 30%;
+    top: -10%;
 }
 
