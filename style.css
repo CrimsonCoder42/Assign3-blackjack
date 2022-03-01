@@ -24,6 +24,7 @@ img {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-left: 25px;
 }
 
 #stay {
@@ -38,6 +39,7 @@ img {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+    margin-left: 25px;
 }
 
 .comp-hand {
@@ -95,7 +97,7 @@ img {
     font-size: 24px;
     margin: 25px;
     width: 15%;
-    height: 80%;
+    height: 85%;
     outline: solid 2px white;
 }
 
@@ -116,6 +118,23 @@ img {
 
 #player-card2{
     left: 30%;
+    top: -10%;
+}
+
+#computerCash{
+    margin-left: 0;
+    left: 0%;
+    top: -10%;
+}
+
+#pot{
+    margin-left: 0;
+    left: 5%;
+    top: -10%;
+}
+#playerCash{
+    margin-left: 0;
+    left: 10%;
     top: -10%;
 }
 

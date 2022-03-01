@@ -47,7 +47,7 @@ function worthSuits() {
            } else {
                color = "black"
            }
-       return new PlayingCard(worth, suit, color);
+       return new PlayingCard(suit, worth, color);
         } )
     } )
 }
@@ -70,16 +70,12 @@ let cardTotal = hearts.length + spades.length + clubs.length + diamonds.length;
         let randomNumber = Math.floor(Math.random() * 4) + 1;
         if (randomNumber === 4){
             heartCards()
-            console.log(`Hearts: ${randomNumber}`)
         }else if(randomNumber === 3){
             spadeCards()
-            console.log(`Spade: ${randomNumber}`)
         } else if(randomNumber === 2) {
             clubCards()
-            console.log(`Clubs: ${randomNumber}`)
         } else if(randomNumber === 1){
             diamondCards()
-            console.log(`Diamonds: ${randomNumber}`)
         }
      }
  } 
