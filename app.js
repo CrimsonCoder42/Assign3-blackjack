@@ -2,19 +2,21 @@ import { shuffledDeck } from './cardDeck.js';
 
 let playerMoney = 0;
 let computerMoney;
-let money;
 
+const money = document.querySelector('input').value;
 const computerHide = document.getElementById('computer-hide');
 const computerShow = document.getElementById('computer-show');
-const computerCash = document.getElementById('computerCash');
+const computerCash = document.getElementById('computerCash').innerHTML;
 const pot = document.getElementById('pot');
-const playerCash = document.getElementById('playerCash');
+const playerCash = document.getElementById('playerCash').innerHTML;
 const hitBtn = document.getElementById('hit');
 const stayBtn = document.getElementById('hit');
 const addBtn = document.getElementById('addMoney');
 const playerCard1 = document.getElementById('player-card1');
 const playerCard2 = document.getElementById('player-card2');
-getMoney()
+
+addBtn.addEventListener('click', getMoney)
+
 
 function getMoney() {
     //money = parseInt(prompt('How much would you like to add to your balance?'))
@@ -30,6 +32,6 @@ function start() {
     playerMoney += money; 
     console.log(playerMoney)
     computerMoney = money;
-    computerCash.innerHTML = `computer $$$ ${computerMoney}`;
-    playerCash.innerHTML = `Player1 $$$ ${playerMoney}`;
+    computerCash = `computer $$$ ${computerMoney}`;
+    playerCash = `Player1 $$$ ${playerMoney}`;
 }

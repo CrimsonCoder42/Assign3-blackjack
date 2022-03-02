@@ -12,63 +12,30 @@ img {
 
 }
 
+
 .add-money{
     position: absolute;
     left: 50%;
     top: 90%;
     transform: translate(-50%, -50%);
-    color: #fff;
     padding: 10px;
     border-radius: 5px;
     font-size: 24px;
     margin: 25px;
     width: 80%;
     height: 10%;
-    border: 1px solid white;
 }
 
-#hit {
-    position: absolute;
-    left: 80%;
-    top: 20%;
-    background-color: rgba(228, 15, 15, 0.829);
-    border: none;
-    color: white;
-    padding: 1% 5%;
-    text-align: center;
-    text-decoration: none;
+.card {
+    position: relative;
     display: inline-block;
-    font-size: 16px;
-    margin-left: 25px;
-}
-
-#stay {
-    position: absolute;
-    left: 80%;
-    top: 40%;
-    background-color: rgb(30, 26, 224);
-    border: none;
-    color: white;
-    padding: 1% 5%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 25px;
-}
-
-.jackpot {
-    position: absolute;
-    left: 20%;
-    top: 50%;
-    border: none;
-    color: white;
-    padding: 1% 5%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 25px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    width: 30%;
+    height: 90%;
+    outline: solid 2px white;
 }
 
 .comp-hand {
@@ -86,6 +53,16 @@ img {
     width: 80%;
     height: 20%;
     
+}
+
+.display {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+
 }
 
 .player-hand {
@@ -122,26 +99,32 @@ img {
     
 }
 
-.card {
-    position: relative;
+.jackpot {
+    position: absolute;
+    left: 20%;
+    top: 35%;
+    border: none;
+    color: black;
+    padding: 1% 5%;
+    text-align: center;
+    text-decoration: none;
     display: inline-block;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-    width: 30%;
-    height: 90%;
-    outline: solid 2px white;
+    font-size: 16px;
+    margin-left: 25px;
 }
 
-.display {
-    position: relative;
-    display: inline-block;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
+#addMoney{
+    left: 55%;
+    background-color: green; 
+}
 
+#computerCash {
+    text-align: center;
+    width: 90%;
+    height: 50%;
+    margin-left: 0;
+    left: 0%;
+    top: 5%;
 }
 
 #computer-hide {
@@ -154,6 +137,27 @@ img {
     top: 5%;
 }
 
+#hit {
+    position: absolute;
+    left: 80%;
+    top: 20%;
+    background-color: rgba(228, 15, 15, 0.829);
+    border: none;
+    color: white;
+    padding: 1% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
+#money-label {
+    left: 24%;
+    top: 0%;
+    color: white;
+}
+
 #player-card1 {
     left: 50%;
     top: 5%;
@@ -164,13 +168,13 @@ img {
     top: 5%;
 }
 
-#computerCash {
+#playerCash {
     text-align: center;
     width: 90%;
     height: 50%;
-    margin-left: 0;
+    margin: 0;
     left: 0%;
-    top: 5%;
+    top: 10%;
 }
 
 #pot {
@@ -182,11 +186,18 @@ img {
     top: 10%;
 }
 
-#playerCash {
+
+#stay {
+    position: absolute;
+    left: 80%;
+    top: 40%;
+    background-color: rgb(30, 26, 224);
+    border: none;
+    color: white;
+    padding: 1% 5%;
     text-align: center;
-    width: 90%;
-    height: 50%;
-    margin: 0;
-    left: 0%;
-    top: 10%;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 25px;
 }
