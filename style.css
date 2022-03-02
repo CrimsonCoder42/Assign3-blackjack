@@ -22,6 +22,7 @@ img {
     border-radius: 5px;
     font-size: 24px;
     margin: 25px;
+    margin-top: 1px;
     width: 80%;
     height: 10%;
 }
@@ -36,6 +37,31 @@ img {
     width: 30%;
     height: 90%;
     outline: solid 2px white;
+}
+
+.cardSuit{
+    position: relative;
+    outline: solid 2px white; 
+    width: 35%;
+    height: 35%;
+    left: 35%;
+    top: 10%;
+}
+
+.cardWorth1{
+    outline: solid 2px white;
+    color: black; 
+    width: 20%;
+    height: 20%;
+}
+
+.cardWorth2{
+    position: relative;
+    outline: solid 2px white; 
+    width: 20%;
+    height: 20%;
+    left: 80%;
+    top: 25%;
 }
 
 .comp-hand {
