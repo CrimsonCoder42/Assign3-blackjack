@@ -12,6 +12,21 @@ img {
 
 }
 
+.add-money{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+    margin: 25px;
+    width: 80%;
+    height: 10%;
+    border: 1px solid white;
+}
+
 #hit {
     position: absolute;
     left: 80%;
@@ -30,7 +45,7 @@ img {
 #stay {
     position: absolute;
     left: 80%;
-    top: 50%;
+    top: 40%;
     background-color: rgb(30, 26, 224);
     border: none;
     color: white;
@@ -42,10 +57,26 @@ img {
     margin-left: 25px;
 }
 
+.jackpot {
+    position: absolute;
+    left: 20%;
+    top: 50%;
+    border: none;
+    color: white;
+    padding: 1% 5%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 25px;
+}
+
 .comp-hand {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     position: absolute;
     left: 50%;
-    top: 20%;
+    top: 10%;
     transform: translate(-50%, -50%);
     color: #fff;
     padding: 10px;
@@ -54,13 +85,15 @@ img {
     margin: 25px;
     width: 80%;
     height: 20%;
-    outline: solid 2px white;
+    
 }
 
 .player-hand {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
     position: absolute;
     left: 50%;
-    top: 80%;
+    top: 60%;
     transform: translate(-50%, -50%);
     color: #fff;
     padding: 10px;
@@ -69,14 +102,15 @@ img {
     margin: 25px;
     width: 80%;
     height: 20%;
-    outline: solid 2px white;
     ;
 }
 
 .info {
+    display: grid;
+    grid-template-rows: 50px 50px 50px;
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 40%;
     transform: translate(-50%, -50%);
     color: #fff;
     padding: 10px;
@@ -85,7 +119,7 @@ img {
     margin-left: 25px;
     width: 80%;
     height: 20%;
-    outline: solid 2px white;
+    
 }
 
 .card {
@@ -95,46 +129,64 @@ img {
     padding: 10px;
     border-radius: 5px;
     font-size: 24px;
-    margin: 25px;
-    width: 15%;
-    height: 85%;
+    width: 30%;
+    height: 90%;
     outline: solid 2px white;
 }
 
-#computer-hide{
-    left: 25%;
-    top: -10%;
+.display {
+    position: relative;
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 24px;
+
 }
 
-#computer-show{
-    left: 30%;
-    top: -10%;
+#computer-hide {
+    left: 50%;
+    top: 5%;
 }
 
-#player-card1{
-    left: 25%;
-    top: -10%;
+#computer-show {
+    left: 0%;
+    top: 5%;
 }
 
-#player-card2{
-    left: 30%;
-    top: -10%;
+#player-card1 {
+    left: 50%;
+    top: 5%;
 }
 
-#computerCash{
+#player-card2 {
+    left: 0%;
+    top: 5%;
+}
+
+#computerCash {
+    text-align: center;
+    width: 90%;
+    height: 50%;
     margin-left: 0;
     left: 0%;
-    top: -10%;
+    top: 5%;
 }
 
-#pot{
-    margin-left: 0;
-    left: 5%;
-    top: -10%;
-}
-#playerCash{
-    margin-left: 0;
-    left: 10%;
-    top: -10%;
+#pot {
+    text-align: center;
+    width: 90%;
+    height: 50%;
+    margin: 0;
+    left: 0%;
+    top: 10%;
 }
 
+#playerCash {
+    text-align: center;
+    width: 90%;
+    height: 50%;
+    margin: 0;
+    left: 0%;
+    top: 10%;
+}

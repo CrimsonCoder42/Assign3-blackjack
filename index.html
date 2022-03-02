@@ -18,22 +18,29 @@
     </div>
 
     <div class="info">
-        <div id="computerCash" class='card'></div>
-        <div id="pot" class='card'></div>
-        <div id="playerCash" class='card'></div>
+        <div id="computerCash" class='display'></div>
+        <div id="pot" class='display'></div>
+        <div id="playerCash" class='display'></div>
         <button id= "hit">Hit</button>
         <button id = "stay">Stay</button>
+       
     </div>
 
     <div class="player-hand">
         <div id = "player-card1" class="card"></div>
         <div id="player-card2" class="card"></div>
     </div>
+    <div class="add-money">
+        <label for="money" class="jackpot">Add money below</label>
+        <input type="text"class="jackpot">
+        <button id = "addMoney" class="jackpot">Add $$</button>
+    </div>
 
 
 
-    <script src="app.js" type="module"></script>
+    
     <script src="cardDeck.js" type="module"></script>
+    <script src="app.js" type="module"></script>
 </body>
 
 </html>
