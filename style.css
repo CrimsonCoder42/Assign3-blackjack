@@ -82,6 +82,10 @@ img {
     ;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
 .info {
     display: grid;
     grid-template-rows: 50px 50px 50px;
@@ -201,3 +205,9 @@ img {
     font-size: 16px;
     margin-left: 25px;
 }
+
+#bet{
+    left: 55%;
+    background-color: green;
+}
+
