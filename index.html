@@ -11,50 +11,76 @@
 
 <body>
     <img class="bkgrd" src="images/black-jack-bkgd.jpg">
+    <div class="main">
+        <div class="position">
+            <div class="playArea">
+                <div id='compCard1' class="computer-hide"> comp hide</div>
+                <div id='compCard2' class="computer-show">comp Show</div>
+                <div id='compMoney' class="currentFunds">comp$$$$</div>
+                <div class="pot">POT</div>
 
-    <div class="comp-hand">
-        <div class="card" id="computer-hide">
-            <div class="cardWorth1"></div>
-            <div class="cardSuit"></div>
-            <div class="cardWorth2"></div>
-        </div>
-        <div class="card" id="computer-show">
-            <div class="cardWorth1"></div>
-            <div class="cardSuit"></div>
-            <div class="cardWorth2"></div>
+                <div id='playerCard1' class="player-card1">player card 1</div>
+                <div id='playerCard2' class="card red" data-value="9">♥</div>
+                <div id='playerMoney' class="currentFunds">Player $$$$</div>
+                <button id="hit" class="btn">Hit</button>
+
+                <div></div>
+
+                <button id="stay" class="btn">Stay</button>
+                <div class="betMoney">
+                    <input id="betAmount" type="number" placeholder="Bet Amount?" class="hidden">
+                    <button id="bet" class="hidden">Bet</button>
+                </div>
+                <div></div>
+                <div class="add-money">
+                    <input id="moneyAmount" type="number" placeholder="Enter amount" class="jackpot">
+                    <button id="addMoney" class="jackpot">Add $$</button>
+
+                </div>
+            </div>
+
         </div>
     </div>
 
-    <div class="info">
-        <div id="computerCash" class='display'></div>
-        <div id="pot" class='display'></div>
-        <div id="playerCash" class='display'></div>
 
-    </div>
+    <!--  <div class="card" id="computer-hide">
+                <div class="cardWorth1"></div>
+                <div class="cardSuit"></div>
+                <div class="cardWorth2"></div>
+            </div>
+            <div class="card" id="computer-show">
+                <div class="cardWorth1"></div>
+                <div class="cardSuit"></div>
+                <div class="cardWorth2"></div>
+            </div>
+        
 
-    <div class="player-hand">
-        <div id="player-card1" class="card">
-            <div class="cardWorth1 playCardW1"></div>
-            <div class="cardSuit"></div>
-            <div class="cardWorth2 playCardW1"></div>
+        <div class="info">
+            <div id="computerCash" class='display'></div>
+            <div id="pot" class='display'></div>
+            <div id="playerCash" class='display'></div>
+
         </div>
-        <div id="player-card2" class="card">
-            <div class="cardWorth1 playCardW2"></div>
-            <div class="cardSuit"></div>
-            <div class="cardWorth2 playCardW2"></div>
-        </div>
-        <button id="hit">Hit</button>
-        <button id="stay">Stay</button>
-    </div>
-    <div class="add-money">
-        <input id="moneyAmount" type="number" placeholder="Enter amount" class="jackpot">
-        <button id="addMoney" class="jackpot">Add $$</button>
-        <input id="betAmount" type="number" placeholder="Bet Amount?" class="hidden">
-        <button id="bet" class="hidden">Bet</button>
-    </div>
 
-
-
+            <div id="player-card1" class="card">
+                <div class="cardWorth1 playCardW1">4</div>
+                <div class="cardSuit"></div>
+                <div class="cardWorth2 playCardW1"></div>
+            </div>
+            <div id="player-card2" class="card">
+                <div class="cardWorth1 playCardW2">4</div>
+                <div class="cardSuit"></div>
+                <div class="cardWorth2 playCardW2"></div>
+            </div>
+            <button id="hit">Hit</button>
+            <button id="stay">Stay</button>
+        
+        <div class="add-money">
+            <input id="moneyAmount" type="number" placeholder="Enter amount" class="jackpot">
+            <button id="addMoney" class="jackpot">Add $$</button>
+            <input id="betAmount" type="number" placeholder="Bet Amount?" class="hidden">
+            <button id="bet" class="hidden">Bet</button>
+    class -->
 
     <script src="cardDeck.js" type="module"></script>
     <script src="app.js" type="module"></script>

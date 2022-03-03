@@ -16,6 +16,7 @@ const hitBtn = document.getElementById('hit');
 const addBtn = document.getElementById('addMoney');
 const stayBtn = document.getElementById('hit');
 let money = document.getElementById('moneyAmount');
+let cardWorth1 = document.getElementsByClassName("cardWorth1 playCardW1");
 
 
 addBtn.addEventListener('click', getMoney)
@@ -61,7 +62,7 @@ function dealCards() {
     const computerShow = document.getElementById('computer-show');
     const playerCard1 = document.getElementById('player-card1');
     const playerCard2 = document.getElementById('player-card2');
-    let cardWorth1 = document.getElementsByClassName('playCardW1');
+    
     let cardWorth2 = document.getElementsByClassName('playCardW2');
     computerCount = []
     playerCount = []
@@ -76,7 +77,8 @@ function dealCards() {
     playerCard2.style.backgroundColor = 'white';
     computerShow.style.backgroundColor = 'white';
     computerHide.style.backgroundColor = 'blue';
-    cardWorth1.innerHTML = computerCount[0].suit;
-    console.log(computerCount[0].suit);
+    cardWorth1.innerHTML = computerCount[0].worth;
+
+    console.log(computerCount[0].worth);
     console.log(playerCount[0].suit);
 }

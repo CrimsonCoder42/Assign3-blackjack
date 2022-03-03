@@ -3,237 +3,125 @@
     padding: 0;
 }
 
+
 img {
+    z-index: 1;
+    position: absolute;
     height: 100%;
     width: 100%;
     display: block;
     margin-left: auto;
     margin-right: auto;
-
 }
 
-
-.add-money{
-    position: absolute;
-    left: 50%;
-    top: 90%;
-    transform: translate(-50%, -50%);
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-    margin: 25px;
-    margin-top: 1px;
-    width: 80%;
-    height: 10%;
-}
-
-.card {
-    position: relative;
-    display: inline-block;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-    width: 30%;
-    height: 90%;
-    outline: solid 2px white;
-}
-
-.cardSuit{
-    position: relative;
-    outline: solid 2px white; 
-    width: 35%;
-    height: 35%;
-    left: 35%;
-    top: 10%;
-}
-
-.cardWorth1{
-    outline: solid 2px white;
-    color: black; 
-    width: 20%;
-    height: 20%;
-}
-
-.cardWorth2{
-    position: relative;
-    outline: solid 2px white; 
-    width: 20%;
-    height: 20%;
-    left: 80%;
-    top: 25%;
-}
-
-.comp-hand {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    position: absolute;
-    left: 50%;
-    top: 10%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-    margin: 25px;
-    width: 80%;
-    height: 20%;
-    
-}
-
-.display {
-    position: relative;
-    display: inline-block;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-
-}
-
-.player-hand {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    position: absolute;
-    left: 50%;
-    top: 60%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-    margin: 25px;
-    width: 80%;
-    height: 20%;
-    ;
-}
-
-.hidden {
-    visibility: hidden;
-}
-
-.info {
-    display: grid;
-    grid-template-rows: 50px 50px 50px;
-    position: absolute;
-    left: 50%;
-    top: 40%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 24px;
-    margin-left: 25px;
-    width: 80%;
-    height: 20%;
-    
-}
-
-.jackpot {
-    position: absolute;
-    left: 20%;
-    top: 35%;
+.btn {
     border: none;
-    color: black;
-    padding: 1% 5%;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin-left: 25px;
+  }
+
+.card {
+    background-color: white;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border: 1px solid black;
+    border-radius: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6rem;
 }
 
-#addMoney{
-    left: 55%;
-    background-color: green; 
+.card::after {
+    bottom: .5rem;
+    right: .5rem;
+    transform: rotate(180deg);
 }
 
-#computerCash {
+.card::before {
+    top: .5rem;
+    left: .5rem
+}
+
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: attr(data-value);
+    font-size: 2rem;
+}
+
+.card::before,
+.card::after {
+    position: absolute;
+    content: attr(data-value);
+    font-size: 2rem;
+}
+
+.card.black {
+    color: black;
+}
+
+.card.red {
+    color: red;
+}
+
+.computer-hide {
+    background-color: blueviolet;
+}
+
+.currentFunds{
     text-align: center;
-    width: 90%;
-    height: 50%;
-    margin-left: 0;
-    left: 0%;
-    top: 5%;
+
 }
 
-#computer-hide {
-    left: 50%;
-    top: 5%;
+.main {
+    position: absolute;
+    justify-content: center;
+    z-index: 3;
+    margin: 0;
+    height: 99%;
+    width: 99%;
 }
 
-#computer-show {
-    left: 0%;
-    top: 5%;
+.playArea {
+    display: grid;
+    grid-template-columns: repeat(3, 6rem);
+    grid-template-rows: 10rem 4rem 10rem 2rem;
+    gap: 1rem;
+    cursor: pointer;
+    justify-content: center;
+    padding-top: 1rem;
+    height: 80%;
+    width: 80%;
+}
+
+.position {
+    justify-content: center;
+    position: absolute;
+    top: 10%;
+    left: 25%;
+    height: 80%;
+    width: 80%;
+}
+
+.pot {
+    font-size: 30px;
+    grid-column: span 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #hit {
-    position: absolute;
-    left: 80%;
-    top: 20%;
-    background-color: rgba(228, 15, 15, 0.829);
-    border: none;
-    color: white;
-    padding: 1% 5%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 25px;
+    background-color: #f44336; 
 }
-
-#money-label {
-    left: 24%;
-    top: 0%;
-    color: white;
-}
-
-#player-card1 {
-    left: 50%;
-    top: 5%;
-}
-
-#player-card2 {
-    left: 0%;
-    top: 5%;
-}
-
-#playerCash {
-    text-align: center;
-    width: 90%;
-    height: 50%;
-    margin: 0;
-    left: 0%;
-    top: 10%;
-}
-
-#pot {
-    text-align: center;
-    width: 90%;
-    height: 50%;
-    margin: 0;
-    left: 0%;
-    top: 10%;
-}
-
 
 #stay {
-    position: absolute;
-    left: 80%;
-    top: 40%;
-    background-color: rgb(30, 26, 224);
-    border: none;
-    color: white;
-    padding: 1% 5%;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 25px;
+    background-color: #008CBA; 
 }
-
-#bet{
-    left: 55%;
-    background-color: green;
-}
-
