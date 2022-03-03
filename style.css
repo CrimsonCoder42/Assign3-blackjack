@@ -13,11 +13,23 @@ img {
     margin-left: auto;
     margin-right: auto;
 }
+.add-money{
+    display: grid;
+    grid-template-columns: repeat(1, 6rem);
+    grid-template-rows: 2rem 2rem;
+}
+
+
+.betMoney {
+    display: grid;
+    grid-template-columns: repeat(1, 6rem);
+    grid-template-rows: 2rem 2rem;
+}
 
 .btn {
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 5px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -118,8 +130,17 @@ img {
     align-items: center;
 }
 
+#addMoneyBtn {
+    background-color: chartreuse;
+}
+
+#betBtn{
+    background-color: coral;
+}
+
 #hit {
     background-color: #f44336; 
+ 
 }
 
 #stay {
