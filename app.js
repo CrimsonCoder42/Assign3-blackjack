@@ -8,12 +8,12 @@ let playerCount = [];
 let cardsUsed = [];
 
 const betAmount = document.getElementById('betAmount');
-const betBtn = document.getElementById('bet');
-const computerCash = document.getElementById('computerCash');
+const betBtn = document.getElementById('betBtn');
+const computerCash = document.getElementById('compMoney');
 const pot = document.getElementById('pot');
-const playerCash = document.getElementById('playerCash');
+const playerCash = document.getElementById('playerMoney');
 const hitBtn = document.getElementById('hit');
-const addBtn = document.getElementById('addMoney');
+const addBtn = document.getElementById('addMoneyBtn');
 const stayBtn = document.getElementById('hit');
 let money = document.getElementById('moneyAmount');
 let cardWorth1 = document.getElementsByClassName("cardWorth1 playCardW1");
@@ -28,10 +28,10 @@ function getMoney() {
     if(addedMoney > 0) {
         playerMoney += addedMoney;
         playerCash.innerHTML = `Player $$$ ${playerMoney}`;
-        computerMoney = 1000;
-        computerCash.innerHTML = `computer $$$ ${computerMoney}`;
-        addBtn.classList ='hidden';
-        money.classList ='hidden';
+        computerMoney = addedMoney;
+        computerCash.innerHTML = `Computer $$$ ${computerMoney}`;
+        addBtn.className = "hidden";
+        money.className = "hidden";
         start()
     } else {
         alert("Must be a NUMBER & more than 0!")
@@ -39,13 +39,12 @@ function getMoney() {
 }
 
 function start() {
-    betAmount.classList = 'jackpot';
-    betBtn.classList = 'jackpot';
     dealCards()
 }
 
 function playerBet() {
     let betPlaced = parseInt(betAmount.value); 
+    console.log(betPlaced)
     if(betPlaced > 0){
         betAdded += betPlaced;
         pot.innerHTML = `POT $$$ ${betAdded}`;
@@ -58,27 +57,39 @@ function playerBet() {
 }
 
 function dealCards() {
-    const computerHide = document.getElementById('computer-hide');
-    const computerShow = document.getElementById('computer-show');
-    const playerCard1 = document.getElementById('player-card1');
-    const playerCard2 = document.getElementById('player-card2');
-    
-    let cardWorth2 = document.getElementsByClassName('playCardW2');
+    const computerHide = document.getElementById('compCard1');
+    const computerShow = document.getElementById('compCard2');
+    const playerCard1 = document.getElementById('playerCard1');
+    const playerCard2 = document.getElementById('playerCard2');
+
     computerCount = []
     playerCount = []
-    if (cardsUsed.length < shuffledDeck.length) {
+    if (cardsUsed.length < 52) {
         for(let i = 0; i < 2; i++){
             computerCount.push(shuffledDeck[Math.floor(Math.random() * 53)]);
             playerCount.push(shuffledDeck[Math.floor(Math.random() * 53)]);
         }
     }
-    cardsUsed.push(computerCount);
-    playerCard1.style.backgroundColor = 'white';
-    playerCard2.style.backgroundColor = 'white';
-    computerShow.style.backgroundColor = 'white';
-    computerHide.style.backgroundColor = 'blue';
-    cardWorth1.innerHTML = computerCount[0].worth;
+    computerShow.className = computerCount[1].suit === "♣" || computerCount[0].suit === "♠" ? "card black" : "card red";
+    computerShow.innerHTML = computerCount[1].suit 
+    computerShow.dataset.number = computerCount[1].worth
 
+    playerCard1.className = playerCount[0].suit === "♣" || playerCount[0].suit === "♠" ? "card black" : "card red";
+    playerCard1.innerHTML = playerCount[0].suit 
+    playerCard1.dataset.number = playerCount[0].worth
+
+    playerCard2.className = playerCount[1].suit === "♣" || playerCount[1].suit === "♠" ? "card black" : "card red";
+    playerCard2.innerHTML = playerCount[1].suit 
+    playerCard2.dataset.number = playerCount[1].worth
+
+    computerHide.className = "computer-hide";
+
+    console.log(computerCount[0].suit);
     console.log(computerCount[0].worth);
-    console.log(playerCount[0].suit);
 }
+
+console.log(cardsUsed);
+
+
+
+

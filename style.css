@@ -64,14 +64,14 @@ img {
 .card::before,
 .card::after {
     position: absolute;
-    content: attr(data-value);
+    content: attr(data-number);
     font-size: 2rem;
 }
 
 .card::before,
 .card::after {
     position: absolute;
-    content: attr(data-value);
+    content: attr(data-number);
     font-size: 2rem;
 }
 
@@ -89,7 +89,13 @@ img {
 
 .currentFunds{
     text-align: center;
+    color: white;
+    font-size: 2rem;
 
+}
+
+.hidden{
+    visibility: hidden;
 }
 
 .main {
@@ -122,12 +128,13 @@ img {
     width: 80%;
 }
 
-.pot {
+.moneyPot {
     font-size: 30px;
     grid-column: span 3;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
 }
 
 #addMoneyBtn {
@@ -140,7 +147,6 @@ img {
 
 #hit {
     background-color: #f44336; 
- 
 }
 
 #stay {
