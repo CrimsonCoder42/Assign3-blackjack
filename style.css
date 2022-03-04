@@ -14,9 +14,13 @@ img {
     margin-right: auto;
 }
 .add-money{
+    top: 30%;
+    left: 30%;
+    z-index: 3;
+    position: absolute;
     display: grid;
     grid-template-columns: repeat(1, 6rem);
-    grid-template-rows: 2rem 2rem;
+    grid-template-rows: 12rem 2rem 2rem;
 }
 
 

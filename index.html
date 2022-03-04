@@ -21,24 +21,24 @@
 
                 <div id='playerCard1' class="computer-show" data-number=""></div>
                 <div id='playerCard2' class="computer-show" data-number=""></div>
-                <div id='playerMoney' class="currentFunds">Add money to play!</div>
-                <button id="hit" class="btn">Hit</button>
+                <div id='playerMoney' class="currentFunds"></div>
+                <button id="hit" class="hidden">Hit</button>
 
-                <div></div>
-
-                <button id="stay" class="btn">Stay</button>
                 <div class="betMoney">
-                    <input id="betAmount" type="number" placeholder="Bet Amount?" class="betAmt">
-                    <button id="betBtn" class="betAmt">Bet</button>
+                    <input id="betAmount" type="number" placeholder="Bet Amount?" class="hidden">
+                    <button id="betBtn" class="hidden">Bet</button>
                 </div>
+
+                <button id="stay" class="hidden">Stay</button>
+
                 <div></div>
-                <div class="add-money">
-                    <input id="moneyAmount" type="number" placeholder="Add More" class="addMoney">
-                    <button id="addMoneyBtn" class="addMoney">Add $$</button>
 
-                </div>
             </div>
-
+            <div class="add-money">
+                <div id='playMoney' class="currentFunds">Add money to play!</div>
+                <input id="moneyAmount" type="number" placeholder="Add More" class="addMoney">
+                <button id="addMoneyBtn" class="addMoney">Add $$</button>
+            </div>
         </div>
     </div>
 
