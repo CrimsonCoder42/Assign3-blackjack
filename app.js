@@ -35,6 +35,7 @@ const playMoney = document.getElementById('playMoney');
 addBtn.addEventListener('click', getMoney);
 betBtn.addEventListener('click', playerBet);
 stayBtn.addEventListener('click', stay);
+hitBtn.addEventListener('click', hit);
 
 // have element appear at beginning and end of game to provide restart. 
 
@@ -43,7 +44,6 @@ function getMoney() {
     let addedMoney = parseInt(money.value);
     if (addedMoney > 0) {
         player.money += addedMoney;
-        console.log(player.money)
         computer.money = addedMoney;
         addBtn.className = "hidden";
         money.className = "hidden";
@@ -78,6 +78,7 @@ function playerBet() {
         computer.money -= betPlaced; 
         betAmount.value = '';
         gameDisplay()
+        handWorth()
     } else {
         alert("Must be a NUMBER & more than 0!");
     }
@@ -85,6 +86,8 @@ function playerBet() {
 
 
 function handWorth(){
+    player.cardValue=0
+    computer.cardValue=0
     player.currentHand.forEach(card => {
         if(card.worth === "J" || card.worth === "Q" ||card.worth === "K") {
             player.cardValue += 10;
@@ -103,6 +106,7 @@ function handWorth(){
             computer.cardValue += parseInt(card.worth)
         }
     })
+    checkTwentyOne()
 }
 
 function gameDisplay() {
@@ -115,14 +119,11 @@ function gameDisplay() {
 // select random cards from deck and display in play area. 
 
 function dealCards() {
-
     for (let i = 1; i < 3; i++) {
         let playerCards = shuffledDeck[Math.floor(Math.random() * 53)];
         player.currentHand.push(playerCards)
-        console.log(player.currentHand)
         let computerCards = shuffledDeck[Math.floor(Math.random() * 53)];
         computer.currentHand.push(computerCards)
-        console.log(computer.currentHand)
     }
     cardDisplay(player.currentHand, computer.currentHand);
 }
@@ -146,6 +147,10 @@ function cardDisplay(arr1, arr2) {
 }
 
 function stay() {
+    checkBust()
+}
+
+function showCard() {
     const comp1 = document.getElementById('compCard1');
     let hiddenCard = computer.currentHand[0];
     comp1.className = `card ${hiddenCard.color}`;
@@ -153,9 +158,81 @@ function stay() {
     comp1.dataset.number = hiddenCard.worth;
 }
 
-
-
-
-function checkWinner() {
-
+function checkBust() {
+    if(computer.cardValue > 21){
+        pot.innerHTML = "Player wins!!"
+        showCard()
+        player.money += betAdded
+       
+    } else if(player.cardValue > 21) {
+        pot.innerHTML = "Computer wins!!"
+        showCard()
+        computer.money += betAdded
+    }
+    checkTwentyOne()
+    checkWin()
+    gameDisplay()
+    
 }
+
+function checkTwentyOne() {
+    if ( computer.cardValue === 21 ) {
+        pot.innerHTML = "Computer wins!!"
+        showCard()
+        computer.money += betAdded
+    } else if(player.cardValue === 21) {
+        pot.innerHTML = "player wins!!"
+        showCard()
+        player.money += betAdded
+    }
+    gameDisplay()
+    
+}
+
+function checkWin() {
+
+    if (computer.cardValue < 21 &&  (computer.cardValue > player.cardValue)) {
+        pot.innerHTML = "Computer wins!!"
+        computer.money += betAdded
+    } else if(player.cardValue < 21 &&  (computer.cardValue > player.cardValue)) {
+        pot.innerHTML = "Player wins!!"
+        player.money += betAdded
+    }
+    gameDisplay()
+}
+
+function reset(){
+    betAdded = 0;
+    player.currentHand = []
+    computer.currentHand = []
+    dealCards()
+}
+
+
+function hit() {
+    if (player.currentHand.length < 3) {
+    console.log(player.currentHand)
+    let hitSpot = document.getElementById('playerHit')
+    let newCard = shuffledDeck[Math.floor(Math.random() * 53)];
+    player.currentHand.push(newCard);
+    const newDiv = document.createElement('div');
+    newDiv.className = `card ${newCard.color}`
+    newDiv.innerHTML = newCard.suit;
+    newDiv.id = "hitCard";
+    newDiv.dataset.number = newCard.worth;
+    hitSpot.appendChild(newDiv)
+    checkBust()
+    } else if (player.currentHand.length >= 3) {
+    console.log(player.currentHand)
+    let nextCard = shuffledDeck[Math.floor(Math.random() * 53)];
+    player.currentHand.push(nextCard);
+    let morph = document.getElementById('hitCard');
+    morph.className = `card ${nextCard.color}`
+    morph.innerHTML = nextCard.suit;
+    morph.dataset.number = nextCard.worth;
+    checkBust()
+    }
+    
+    handWorth()
+}
+
