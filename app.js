@@ -21,6 +21,21 @@ let computer = {
     id:2
 }
 
+let cardValues = {
+    "A": 11,
+    "K": 10, 
+    "Q": 10,
+    "J": 10,
+    "10": 10,
+    "9": 9, 
+    "8": 8,
+    "7": 7,
+    "5": 5,
+    "4": 4, 
+    "3": 3,
+    "2": 2 
+} 
+
 // grab elements from HTML 
 let betAdded = 0;
 const betAmount = document.getElementById('betAmount')
@@ -42,7 +57,7 @@ hitBtn.addEventListener('click', hit);
 function getMoney() {
     let money = document.getElementById('moneyAmount');
     let addedMoney = parseInt(money.value);
-    if (addedMoney > 0) {
+    if (addedMoney > 0 && addedMoney < 10000) {
         player.money += addedMoney;
         computer.money = addedMoney;
         addBtn.className = "hidden";
@@ -51,7 +66,7 @@ function getMoney() {
         start()
         gameDisplay()
     } else {
-        alert("Must be a NUMBER & more than 0!")
+        alert("Must be a NUMBER, more than 0 and less than 10,000!")
     }
 }
 
@@ -71,7 +86,7 @@ function playerBet() {
     hitBtn.className = 'btn'
     stayBtn.className = 'btn'
     let betPlaced = parseInt(betAmount.value);
-    if (betPlaced > 0) {  
+    if (betPlaced > 0 && betPlaced < player.money) {  
         betAdded += (betPlaced * 2);
         pot.innerHTML = `POT $$$ ${betAdded}`;
         player.money -= betPlaced;
@@ -79,6 +94,8 @@ function playerBet() {
         betAmount.value = '';
         gameDisplay()
         handWorth()
+    } else if (player.money > player.money) {
+        alert("Can't bet more than you have!");
     } else {
         alert("Must be a NUMBER & more than 0!");
     }
@@ -147,6 +164,7 @@ function cardDisplay(arr1, arr2) {
 }
 
 function stay() {
+    console.log("check")
     checkBust()
 }
 
@@ -235,4 +253,3 @@ function hit() {
     
     handWorth()
 }
-
