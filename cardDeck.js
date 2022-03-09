@@ -60,7 +60,7 @@ let spades = deck.deck[1];
 let clubs = deck.deck[2];
 let diamonds= deck.deck[3]
 let cardTotal = hearts.length + spades.length + clubs.length + diamonds.length; 
- export let shuffledDeck = []
+export let shuffledDeck = []
  
  // uses math.Random to randomize card selection to shuffleDeck. 
  
@@ -113,6 +113,10 @@ function diamondCards() {
 shuffledDeck = shuffledDeck.filter(function( element){
     return element !== undefined;
 })
+
+
+
+
 
 
 
