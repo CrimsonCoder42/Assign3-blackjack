@@ -36,11 +36,13 @@ class PlayingCard {
 
   }
 
+// sets color of each card by suit. 
+
 worthSuits()
 
 function worthSuits() {
     let color;
-    return cardSuits.map(suit => {
+    return cardSuits.flatMap(suit => {
        return cardWorth.map(worth => {
            if (suit === "♥" || suit === "♦" ) {
                color = "red"
@@ -52,68 +54,21 @@ function worthSuits() {
     } )
 }
 
-//Creates decks separated by suits. exports the shuffled cards to app.js.
-
 let deck = new FullDeck();
-let hearts = deck.deck[0];
-let spades = deck.deck[1];
-let clubs = deck.deck[2];
-let diamonds= deck.deck[3]
-let cardTotal = hearts.length + spades.length + clubs.length + diamonds.length; 
-export let shuffledDeck = []
- 
- // uses math.Random to randomize card selection to shuffleDeck. 
- 
- shuffle()
- function shuffle() {
-     while(shuffledDeck.length < 53){
-        let randomNumber = Math.floor(Math.random() * 4) + 1;
-        if (randomNumber === 4){
-            heartCards()
-        }else if(randomNumber === 3){
-            spadeCards()
-        } else if(randomNumber === 2) {
-            clubCards()
-        } else if(randomNumber === 1){
-            diamondCards()
-        }
-     }
- } 
+export let completeDeck = deck.deck
 
-// When function called pushes random card by suit into shuffledDeck. Will not allow a card to populate shuffled deck that already exists. 
 
-function heartCards() {
-    let randomHeart = hearts[Math.floor(Math.random() * 14)];
-    if (!shuffledDeck.includes(randomHeart)){
-        shuffledDeck.push(randomHeart);
+// sets card value separate from face worth. 
+
+completeDeck.forEach(card => {
+    if (card.worth === 'K' || card.worth === 'Q'|| card.worth === 'J') {
+        card.value = 10;
+    } else if (card.worth === "A"){
+        card.value = 11;
+    }  else {
+         card.value = parseInt(card.worth);
     }
-}
-
-function spadeCards() {
-    let randomSpade = spades[Math.floor(Math.random() * 14)];
-    if (!shuffledDeck.includes(randomSpade)){
-        shuffledDeck.push(randomSpade);
-    }
-}
-
-function clubCards() {
-    let randomClub = clubs[Math.floor(Math.random() * 14)];
-    if (!shuffledDeck.includes(randomClub)){
-        shuffledDeck.push(randomClub);
-    }
-}
-function diamondCards() {
-    let randomDiamond = diamonds[Math.floor(Math.random() * 14)];
-    if (!shuffledDeck.includes(randomDiamond)){
-        shuffledDeck.push(randomDiamond);
-    }
-}
-
-// prevents any undefined elements to exist in deck. 
-shuffledDeck = shuffledDeck.filter(function( element){
-    return element !== undefined;
 })
-
 
 
 
