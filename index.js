@@ -23,6 +23,7 @@ let gameBoard = {
 }
 
 let burnCard = [];
+let compBurn = [];
 
 // grab elements from HTML 
 const betAmount = document.getElementById('betAmount')
@@ -38,6 +39,7 @@ betBtn.addEventListener('click', playerBet);
 stayBtn.addEventListener('click', stay);
 hitBtn.addEventListener('click', hit);
 
+//initial bank computer and player have same amount 
 
 function getMoney() {
     let money = document.getElementById('moneyAmount');
@@ -65,6 +67,8 @@ function start() {
 
 }
 
+// house bet matches player bet 
+
 function playerBet() {
     hitBtn.className = 'btn'
     stayBtn.className = 'btn'
@@ -83,6 +87,8 @@ function playerBet() {
     twentyOne()
 }
 
+// resets diplay as game is played to adjust number and bank 
+
 function gameDisplay() {
     const potShow = document.getElementById('pot');
     const playerCash = document.getElementById('playerMoney');
@@ -91,6 +97,8 @@ function gameDisplay() {
     computerCash.innerHTML = `$ ${computer.money}`;
     potShow.innerHTML = gameBoard.pot;
 }
+
+// get randomized cards 
 
 function dealCards() {
     for (let i = 1; i < 3; i++) {
@@ -108,6 +116,8 @@ function dealCards() {
     cardDisplay(player.currentHand, computer.currentHand);
 
 }
+
+// display all cards as they come out. 
 
 function cardDisplay(arr1, arr2) {
     const comp1 = document.getElementById('compCard1');
@@ -127,6 +137,8 @@ function cardDisplay(arr1, arr2) {
 
 }
 
+// show dealer hand if bust or stay by player 
+
 function showCard() {
     const comp1 = document.getElementById('compCard1');
     let hiddenCard = computer.currentHand[0];
@@ -135,7 +147,7 @@ function showCard() {
     comp1.dataset.number = hiddenCard.worth;
 }
 
-
+// automate the win procedure for players 
 function computerWins() {
     alert("Computer wins!!")
     computer.money += gameBoard.pot
@@ -150,6 +162,8 @@ function playerWins() {
     reset()
 }
 
+//check if great than or equal to 21 
+
 function twentyOne() {
     if (computer.cardsValue === 21 || player.cardsValue > 21) {
         computerWins()
@@ -157,6 +171,8 @@ function twentyOne() {
         playerWins()
     }
 }
+
+// hit card replaces adds a card then creates new card "in stack" but keeps total count
 
 function hit() {
     if (player.currentHand.length > 2) {
@@ -186,10 +202,28 @@ function hit() {
         burnCard.push(morph.id)
         console.log(burnCard)
     }
+    computerLogic()
     twentyOne()
     gameDisplay()
     console.log(player.currentHand)
 }
+
+// player stays check all cards 
+
+function stay() {
+    checkTwentyOne()
+
+    if (computer.cardsValue > player.cardsValue){
+        computerWins()
+    } else if (computer.cardsValue < player.cardsValue) {
+        playerWins()
+    }
+
+    gameDisplay()
+    computerLogic()
+}
+
+// reset all paramaters for next hand 
 
 function reset(){
     let burn = document.getElementById(`${burnCard[0]}`);
@@ -200,4 +234,24 @@ function reset(){
     computer.currentHand = []
     dealCards()
     burnCard = [];
+    compBurn = []
+}
+
+//basic computer logic 
+
+function computerLogic() {
+    if (computer.cardsValue < 10) {
+        let nextCard = completeDeck[Math.floor(Math.random() * 53)];
+        player.cardsValue += nextCard.value
+        console.log(nextCard)
+        let morph = document.getElementById('compHit');
+        morph.className = `card ${nextCard.color}`
+        morph.innerHTML = nextCard.suit;
+        morph.dataset.number = nextCard.worth;
+        morph.id = `compHit${nextCard.value}`
+        compBurn.push(morph.id)
+        console.log(compBurn)
+    } else if (computer.cardsValue > 10) {
+        alert("Computer stays.")
+    }
 }
