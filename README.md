@@ -1,4 +1,7 @@
 # Assign3-blackjack
+
+https://crimsoncoder42.github.io/Assign3-blackjack/
+
 Your second task is to create a page that implements the game of blackjack in which a 
 player plays against a dealer. It will be your choice how to implement the game given the 
 following requirements:
